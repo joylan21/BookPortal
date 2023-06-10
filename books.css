@@ -488,13 +488,16 @@ button:focus+.design-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 100%;
     height: 146px;
   }
   .right-box,
   .left-box {
     width: 100%;
     height: auto;
+  }
+  .right-box{
+    padding-left: 100px;
   }
 
   .div-1,
