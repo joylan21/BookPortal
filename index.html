@@ -53,12 +53,12 @@
                         <img src="book-im.avif" alt="Brohm Lake">
                         </figure>
                         <p>The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. "To Kill A Mockingbird" became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.</p>
-                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setEmailFieldValue('book1')">Purchase</button>
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setEmailFieldValue('book1')">Order</button>
                     </div>
                 </div>
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" style="top: 200px;">
+                <div class="modal-dialog" style="top: 135px;">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Please Enter contact details</h1>
@@ -67,16 +67,20 @@
                     <div class="modal-body">
                       <form>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Book Name:</label>
+                            <label for="recipient-book" class="col-form-label">Book Name:</label>
                             <input type="text" class="form-control" id="recipient-Book" disabled>
                           </div>
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Email:</label>
+                          <label for="recipient-email" class="col-form-label">Email:</label>
                           <input type="text" class="form-control" id="recipient-email">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Contact:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="recipient-phone" class="col-form-label">Contact Number:</label>
+                            <input type="number" class="form-control" id="recipient-phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-address" class="col-form-label">Adress:</label>
+                            <input type="text" class="form-control" id="recipient-address">
                         </div>
                         <div class="mb-3">
                           <label for="message-text" class="col-form-label">Message:</label>
