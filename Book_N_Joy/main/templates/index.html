@@ -1,0 +1,487 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <style>
+        body {
+          background-image: url('{% static "assets/blue_backgrnd.jpg" %}');
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container-fluid mt-2">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand ps-3" href="#">Book N Joy</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Books</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2 no-focus-border" type="search" placeholder="Search Books" aria-label="Search">
+                  <button class="searchButton" type="submit"><i class="material-icons">search</i></button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="container container-scrollable">
+
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg" alt="Brohm Lake">
+                        <figcaption id="book1-title">To Kill a Mockingbird</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="book-im.avif" alt="Brohm Lake">
+                        </figure>
+                        <p>The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. "To Kill A Mockingbird" became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setEmailFieldValue('book1')">Order</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="top: 90px;">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Please Enter contact details</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                            <label for="recipient-book" class="col-form-label">Book Name:</label>
+                            <input type="text" class="form-control" id="recipient-Book" disabled>
+                          </div>
+                        <div class="mb-3">
+                          <label for="recipient-email" class="col-form-label">Email:</label>
+                          <input type="text" class="form-control" id="recipient-email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-phone" class="col-form-label">Contact Number:</label>
+                            <input type="number" class="form-control" id="recipient-phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-address" class="col-form-label">Adress:</label>
+                            <input type="text" class="form-control" id="recipient-address">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption id="book2-title">I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setEmailFieldValue('book2')">Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /flip-card-container -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                        <!-- <div class="img-bg"></div> -->
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        <figcaption>I want to eat your Pancreas</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                        <div class="img-bg"></div>
+                        <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?,
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ea ipsa doloremque rem possimus pariatur dolorum quis ipsam, suscipit vero ipsum eum itaque earum magni illo molestiae quod? Ducimus, aut?
+                        </p>
+                        <button>Book</button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        const exampleModal = document.getElementById('exampleModal')
+// if (exampleModal) {
+//   exampleModal.addEventListener('show.bs.modal', event => {
+//     // Button that triggered the modal
+//     const button = event.relatedTarget
+//     // Extract info from data-bs-* attributes
+//     const recipient = button.getAttribute('data-bs-whatever')
+//     // If necessary, you could initiate an Ajax request here
+//     // and then do the updating in a callback.
+
+//     // Update the modal's content.
+//     const modalTitle = exampleModal.querySelector('.modal-title')
+//     const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+//     modalTitle.textContent = `New message to ${recipient}`
+//     modalBodyInput.value = recipient
+//   })
+// }
+function setEmailFieldValue(cardId) {
+  var flipCardTitle = document.getElementById(cardId + "-title").innerText;
+  document.getElementById("recipient-Book").value = flipCardTitle;
+}
+
+    </script>
+  </body>
+</html>
