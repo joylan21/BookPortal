@@ -71,33 +71,34 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form action="" method="POST">
+                        {% csrf_token %}
                         <div class="mb-3">
                             <label for="recipient-book" class="col-form-label">Book Name:</label>
-                            <input type="text" class="form-control" id="recipient-Book" disabled>
+                            <input name='book' type="text" class="form-control" id="recipient-Book" readonly>
                           </div>
                         <div class="mb-3">
-                          <label for="recipient-email" class="col-form-label">Email:</label>
-                          <input type="text" class="form-control" id="recipient-email">
+                          <label for="recipient-email" class="col-form-label" >Email:</label>
+                          <input name='email' type="text" class="form-control" id="recipient-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-phone" class="col-form-label">Contact Number:</label>
-                            <input type="number" class="form-control" id="recipient-phone">
+                            <label for="recipient-phone" class="col-form-label"  >Contact Number:</label>
+                            <input name='phone' type="number" class="form-control" id="recipient-phone" required>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-address" class="col-form-label">Adress:</label>
-                            <input type="text" class="form-control" id="recipient-address">
+                            <label for="recipient-address" class="col-form-label" >Adress:</label>
+                            <input name='address' type="text" class="form-control" id="recipient-address" required>
                         </div>
                         <div class="mb-3">
                           <label for="message-text" class="col-form-label">Message:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                          <textarea name='message' class="form-control" id="message-text" required></textarea>
                         </div>
-                      </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type='submit' type="button" class="btn btn-primary">Submit</button>
                     </div>
+                </form>
                   </div>
                 </div>
               </div>

@@ -634,3 +634,12 @@ button:focus+.design-container {
     width: 100%;
   }
 }
+
+.message {
+        /* display: none; */
+        height: 50px;
+        /* background-color: grey; */
+        width: 100%;
+        text-align: center;
+        color: rgb(139, 223, 14);
+      }
