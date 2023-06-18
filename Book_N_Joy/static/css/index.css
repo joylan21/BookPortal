@@ -515,6 +515,9 @@ button:focus+.design-container {
     border-bottom: none;
   
   }
+  .modal-dialog{
+    top: 90px;
+  }
 }
 .contact-form input {
   width: 100%;

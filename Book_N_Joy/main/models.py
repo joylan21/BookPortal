@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Books(models.Model):
-    book_name = models.CharField(max_length=200)
+    book_name = models.CharField(max_length=200,unique=True)
     genre = models.CharField(max_length=50)
     description = models.TextField()
     image = models.ImageField(upload_to='books')

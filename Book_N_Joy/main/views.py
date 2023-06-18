@@ -7,13 +7,15 @@ def home(request):
     if request.method == 'POST':
         try:
             data = request.POST
-            print(data)
             book = Books.objects.get(book_name=data['book'])
             BookOrder.objects.create(email = data['email'],book=book,message=data['message'],contact_number=data['phone'],address=data['address'])
             return redirect(reverse('home'))
         except :
             return redirect(reverse('home'))
-    return render(request, 'index.html')
+    book_objects = Books.objects.all()
+    print(book_objects.count())
+    context = {'book_objects':book_objects}
+    return render(request, 'index.html',context=context)
 
 def AboutUs(request):
     return render(request, 'aboutUs.html')
