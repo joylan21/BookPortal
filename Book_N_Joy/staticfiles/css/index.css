@@ -22,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     /* background-image: url("library-cartoon.jpg"); */
-    background-image: url("blueooo.jpg");
+    /* background-image: url("blueooo.jpg"); */
     /* background-color: #7b9595; */
     background-size: cover;
     background-position: center;
@@ -471,7 +471,7 @@ button:focus+.design-container {
 }
 
 .right-box{
-  background-image: url('./card-img.jpg');
+  /* background-image: url('./card-img.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -514,6 +514,9 @@ button:focus+.design-container {
   .nav-item .active{
     border-bottom: none;
   
+  }
+  .modal-dialog{
+    top: 90px;
   }
 }
 .contact-form input {
@@ -614,14 +617,14 @@ button:focus+.design-container {
   background-repeat: no-repeat;
   border-radius: 15px;
 }
-.img-1{
+/* .img-1{
   background-image: url('./book-im.avif');
 
   
 }
 .img-2{
   background-image: url('./book-image.webp');
-}
+} */
 
 @media (max-width: 767px) {
   .about-us{
@@ -634,3 +637,12 @@ button:focus+.design-container {
     width: 100%;
   }
 }
+
+.message {
+        /* display: none; */
+        height: 50px;
+        /* background-color: grey; */
+        width: 100%;
+        text-align: center;
+        color: rgb(139, 223, 14);
+      }
