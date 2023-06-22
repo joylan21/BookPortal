@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jh-#9r2)-zlq937s*4!36pgzjtt^10uli_bwxbib1muw9=2b!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_URL = 'https://www.booknjoy.in'
+SITE_ID = 1

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class Books(models.Model):
@@ -6,6 +7,17 @@ class Books(models.Model):
     genre = models.CharField(max_length=50)
     description = models.TextField()
     image = models.ImageField(upload_to='books')
+
+    # SEO metadata
+    slug = models.SlugField(unique=True, editable=False,null=True)
+    meta_title = models.CharField(max_length=200,null=True)
+    meta_description = models.TextField(null=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.book_name)
+        self.meta_title = self.book_name
+        self.meta_description = self.description
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.book_name
