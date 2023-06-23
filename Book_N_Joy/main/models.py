@@ -9,9 +9,9 @@ class Books(models.Model):
     image = models.ImageField(upload_to='books')
 
     # SEO metadata
-    slug = models.SlugField(unique=True, editable=False,null=True)
-    meta_title = models.CharField(max_length=200,null=True)
-    meta_description = models.TextField(null=True)
+    slug = models.SlugField(unique=True, editable=False,null=True,blank=True)
+    meta_title = models.CharField(max_length=200,null=True,blank=True)
+    meta_description = models.TextField(null=True,blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.book_name)
