@@ -171,6 +171,21 @@ function setEmailFieldValue(cardId) {
     setTimeout(function(){
                 $('.alert').alert('close');
             }, 3000);
+            
+            const urlParams = new URLSearchParams(window.location.search);
+
+// Check if the 'search' parameter exists
+if (urlParams.has('search')) {
+    // Remove the 'search' parameter from the URL
+    urlParams.delete('search');
+
+    // Get the updated URL without the 'search' parameter
+    const updatedUrl = `${window.location.origin}${window.location.pathname}`;
+
+    // Replace the current URL without adding a new entry to the browser history
+    window.history.replaceState({}, document.title, updatedUrl);
+}
+            
     </script>
   </body>
 </html>
