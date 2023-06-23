@@ -73,7 +73,11 @@
                         <h6 class="m-0 ps-3" style="font-size: 15px; color: white;">Address</h6>
                     </div>
                     <div class="content pt-2" style="width: 180px;  max-height: 100px;overflow-y: auto;font-size: 12px;">
+                      {% if contact_objects %}
+                        <p style="color: white;padding-left: 38px;margin: 0;">{{ contact_objects.address }}</p>
+                      {% else %}
                         <p style="color: white;padding-left: 38px;margin: 0;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non, ea dolore cum accusamus</p>
+                      {% endif %}
                     </div>
                 </div>
                 <div class="div-2">
@@ -82,7 +86,11 @@
                         <h6 class="m-0 ps-3" style="font-size: 15px; color: white;">Lets Talk</h6>
                     </div>
                     <div class="content pt-2"  style="width: 180px; max-height: 100px;overflow-y: auto;font-size: 12px;">
-                        <p style="color: white;padding-left: 38px;margin: 0;">+91 7899466543</p>
+                      {% if contact_objects %}
+                      <p style="color: white;padding-left: 38px;margin: 0;">{{ contact_objects.phone }}</p>
+                      {% else %}
+                      <p style="color: white;padding-left: 38px;margin: 0;">+91 xxxxxxxxxx</p>
+                      {% endif %}
                     </div>
                 </div>
                 <div class="div-3">
@@ -91,7 +99,11 @@
                         <h6 class="m-0 ps-3" style="font-size: 15px; color: white;">General Support</h6>
                     </div>
                     <div class="content pt-2" style="width: 180px;  max-height: 100px;overflow-y: auto; font-size: 12px;">
-                        <p style="color: white;padding-left: 38px;margin: 0;">test@gmail.com</p>
+                      {% if contact_objects %}
+                      <p style="color: white;padding-left: 38px;margin: 0;">{{ contact_objects.email }}</p>
+                      {% else %}
+                      <p style="color: white;padding-left: 38px;margin: 0;">test@gmail.com</p>
+                      {% endif %}
                     </div>
                 </div>
             </div>

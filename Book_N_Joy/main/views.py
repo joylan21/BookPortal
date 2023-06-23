@@ -22,11 +22,17 @@ def home(request):
     context = {'book_objects':book_objects}
     return render(request, 'index.html',context=context)
 
-def AboutUs(request):
-    return render(request, 'aboutUs.html')
+def aboutus(request):
+    aboutus_objects = AboutUs.objects.all()
+    if aboutus_objects:
+        aboutus_objects = aboutus_objects[0]
+    return render(request, 'aboutUs.html',context={'aboutus_objects':aboutus_objects})
 
-def ContactUs(request,message=None):
-    context={'message':''}
+def contactus(request,message=None):
+    contact_objects = ContactUs.objects.all()
+    if contact_objects:
+        contact_objects = contact_objects[0]
+    context={'message':'','contact_objects':contact_objects}
     if request.method == 'POST':
         try:
             data = request.POST
