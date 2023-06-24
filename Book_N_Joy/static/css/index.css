@@ -646,3 +646,8 @@ button:focus+.design-container {
         text-align: center;
         color: rgb(139, 223, 14);
       }
+
+.para-content{
+  max-height: 400px;
+  overflow-y: scroll;
+}
